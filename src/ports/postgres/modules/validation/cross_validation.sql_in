@@ -27,7 +27,7 @@ reduce variability, multiple rounds of cross-validation are performed using diff
 results are averaged over the rounds.
 
 In k-fold cross-validation, the original sample is randomly partitioned into k equal size subsamples. Of the k subsamples,
-a single subsample is retained as the validation data for testing the model, and the remaining k − 1 subsamples are used
+a single subsample is retained as the validation data for testing the model, and the remaining k - 1 subsamples are used
 as training data. The cross-validation process is then repeated k times (the folds), with each of the k subsamples used
 exactly once as the validation data. The k results from the folds then can be averaged (or otherwise combined) to produce
 a single estimation. The advantage of this method over repeated random sub-sampling is that all observations are used for
