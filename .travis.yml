@@ -13,7 +13,7 @@ before_script:
   - sudo apt-get install postgresql-common                   # Required for extension support files
   
 script:
-  - configure
+  - ./configure
   - cd build
   - make
 
