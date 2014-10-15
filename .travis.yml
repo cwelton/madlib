@@ -1,8 +1,8 @@
 language: c++
 
 env:
-#  - PGVERSION=9.1
-  - PGVERSION=9.2
+  - PGVERSION=9.1
+#  - PGVERSION=9.2
 #  - PGVERSION=9.3
 
 before_script:
@@ -13,8 +13,12 @@ before_script:
   - sudo apt-get install postgresql-common                   # Required for extension support files
   
 script:
+  - pg_config --includedir
+  - grep VERSION_NUM `pg_config --includedir`/pg_config.h
+  - postgres --version
+  - psql -c "select version()"
   - ./configure
-  - cd build
-  - make
+#  - cd build
+#  - make
 
 
