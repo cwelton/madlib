@@ -83,7 +83,7 @@ if(NOT DEFINED ${PKG_NAME}_PG_CONFIG)
 endif(NOT DEFINED ${PKG_NAME}_PG_CONFIG)
 
 if(${PKG_NAME}_PG_CONFIG)
-    execute_process(COMMAND ${${PKG_NAME}_PG_CONFIG} --includedir
+    execute_process(COMMAND ${${PKG_NAME}_PG_CONFIG} --includedir-server
         OUTPUT_VARIABLE ${PKG_NAME}_CLIENT_INCLUDE_DIR
         OUTPUT_STRIP_TRAILING_WHITESPACE
     )
