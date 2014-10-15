@@ -13,11 +13,14 @@ before_script:
   - sudo apt-get install postgresql-common                   # Required for extension support files
   
 script:
+  - ls /usr/lib/postgresql/$PGVERSION/bin
+  - which pg_config
   - pg_config --includedir
   - grep VERSION_NUM `pg_config --includedir`/pg_config.h
   - postgres --version
-  - psql -c "select version()"
-  - ./configure
+  - psql -c "select version()" template1
+  - pg_config
+#  - ./configure
 #  - cd build
 #  - make
 
