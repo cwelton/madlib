@@ -10,22 +10,13 @@ before_script:
   - sudo /etc/init.d/postgresql stop                         # Stop whichever version of PG that travis started
   - sudo /etc/init.d/postgresql start $PGVERSION             # Start the version of PG that we want to test
   - sudo apt-get install postgresql-server-dev-$PGVERSION    # Required for PGXS
-#  - sudo apt-get install postgresql-common                   # Required for extension support files
-#  - sudo apt-get install boost                               # MADlib dependency
-#  - sudo easy_install PyXB                                   # MADlib dependency
+#  - sudo apt-get install postgresql-common                  # Required for extension support files
+#  - sudo apt-get install libboost1.54-dev                   # MADlib dependency
+#  - sudo easy_install PyXB                                  # MADlib dependency
   
 script:
-  - lsb_release -sc
-  - cat /etc/apt/sources.list
-  - ls /usr/lib/postgresql/$PGVERSION/bin
-  - which pg_config
-  - pg_config --includedir
-  - grep VERSION_NUM `pg_config --includedir`/pg_config.h
-  - postgres --version
-  - psql -c "select version()" template1
-  - pg_config
   - ./configure
-#  - cd build
-#  - make
+  - cd build
+  - make
 
 
