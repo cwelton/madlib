@@ -18,5 +18,8 @@ script:
   - ./configure
   - cd build
   - make
+  - sudo make install
+  - /usr/local/madlib/bin/madpack -p postgres install
+  - /usr/local/madlib/bin/madpack -p postgres install-check
 
 
