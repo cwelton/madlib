@@ -20,6 +20,4 @@ script:
   - make
   - sudo make install
   - /usr/local/madlib/bin/madpack -p postgres install
-  - /usr/local/madlib/bin/madpack -p postgres install-check
-
-
+  - /usr/local/madlib/bin/madpack -p postgres install-check -c "$USER/$USER@localhost:5432/$USER"
